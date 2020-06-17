@@ -1,18 +1,23 @@
-import React, {Component } from 'react';
+import React, { Component } from 'react';
+import './card.css';
 
- class Card extends Component{
-
-    render(){
-        const {url, title, year, last, description, kind} = this.props
-    return <div>
-        <img src={url} alt="portada"/>
-        <p>{title}</p>
-        <span>({year})</span>
-        <p> Duración: {last}</p>
-        <p> Género: {kind}</p>
-        <p> Descripción: {description}</p>
+export default function App({url, title, year, last, description, kind }) {
+  return (
+    <div className="card">
+        <img src={url} alt="portada" />
+        <div className="info">
+            <h1>{title}</h1>
+            <h2>({year})</h2>
+            <p>
+            Duración: <span>{last}</span>
+            </p>
+            <p>
+            Género: <span>{kind}</span>
+            </p>
+            <p>
+            Descripción: <span>{description}</span>
+            </p>
         </div>
-    }
- }
-
-export default Card;
+    </div>
+  );
+}
